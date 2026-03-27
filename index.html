@@ -886,30 +886,7 @@
             }
         });
     </script>
-  <audio id="bg-music" loop>
-    <source src="nhac.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-window.addEventListener('load', () => {
-    const music = document.getElementById("bg-music");
-
-    // giảm âm lượng cho sang
-    music.volume = 0.3;
-
-    // thử autoplay
-    let playPromise = music.play();
-
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            // nếu bị chặn → click 1 lần là chạy
-            document.body.addEventListener("click", () => {
-                music.play();
-            }, { once: true });
-        });
-    }
-});
-</script>
+  
 </body>
 
 </html>
